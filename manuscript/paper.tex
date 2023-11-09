@@ -46,12 +46,12 @@ rich in tradition and innovation. Throughout its long history, MLB has enacted
 numerous rule changes aimed at improving the game's relevance, competitiveness,
 and entertainment value. For instance, in 1973, the designated hitter rule was
 implemented for all American League teams, with the hopes of increasing
-offensive production as a whole. However, we are not really interested in \emph{why}
+offensive production as a whole. However, we are not really interested in ``why''
 the rules are changed, but more the underlying effects of the change(s). This
 can be seen in \citet{Cooley} where the effects of the designated hitter rule
 on player longevity, pitcher complete games, and number of hit batters are
 analyzed. We see many more major and minor MLB rule changes come into action
-throughout the course of its history, like the recent \emph{ghost runner} rule
+throughout the course of its history, like the recent ``ghost runner'' rule
 carried out in the weird, shortened, COVID-19 season in 2020, where a baserunner 
 automatically starts out on second-base in extra-innings.
 
@@ -79,7 +79,7 @@ a list of the new rules and a short description for each, according to \citet{Ca
   pickoff attempt is not successful.
 \end{itemize}
 
-These rule changes may seem ridiculous to many baseball \emph{purists} out there,
+These rule changes may seem ridiculous to many baseball ``purists'' out there,
 but here is a quote from Commissioner Manfred that explains the rationale:
 
 \begin{quote}
@@ -157,9 +157,9 @@ Attempted) and 3FGA (3-Point Field Goals Attempted) were significantly greater
 in the post rule change period.
 
 Also, we do not need to just look at rule changes specifically, we can explore
-a \emph{before and after analysis} of some other change made in sports. \citet{Price}
+a ``before and after analysis'' of some other change made in sports. \citet{Price}
 is a good illustration of this is, as they conducted an analysis of the COVID
-\emph{bubble} in the NBA playoffs and how this affected home-court advantage.
+``bubble'' in the NBA playoffs and how this affected home-court advantage.
 Nine different z-tests were conducted to try to see if there was significance in
 the difference in free-throw rate, winning percentage, etc. in the 2020 season
 compared to previous years. This highly relates to our study, but we will instead
@@ -174,8 +174,56 @@ without VAR.
 \section{Data}
 \label{sec:data}
 
-Use this section to describe the data that helps to answer your research
-questions.
+The data used for this analysis was collected from \href{https://baseballsavant.mlb.com/}{Baseball Savant},
+a comprehensive and interactive platform that contains advanced statistics and
+data related to Major League Baseball (MLB). The main variables of interest
+are Stolen Bases (SB), Batting average (BA), Strike Outs (SO), and Batting
+Average on Balls in Play (BABIP), among some others. These are game-related
+baseball statistics that will be analyzed similar to those used in the literature
+above, like we saw with Free Throw Rate in the NBA, for example. These variables
+were selected based on domain knowledge and intuition about what metrics may be
+affected most by the new MLB rule changes. We expect to see Stolen Bases increase
+across the league, due to the pitch clock and pitcher disengagement limits. Batting
+Average, Batting Average on Balls in Play, and Slugging (SLG) may be affected by
+the limit of the defensive shift, as this rule change may increase the likelihood
+of a hit. In a similar vein, Strike Outs and Walks (BB) may see an impact as both
+pitchers and batters adjust to the pitch clock. Other variables included in the
+study:
+\begin{itemize}
+  \item Ground Into Double Play (GIDP)
+  \item Hits on Ground Balls (Hit-GB)
+  \item Expected Batting Average (xBA)
+\end{itemize}
+We expect these variables will be affected by the limit of the defensive shift.
+Also, pace of play (game time) data was collected from \href{https://www.baseball-reference.com/}{Baseball Reference}.
+Each row of this dataset represents a single season from 2023 dating back to 1998
+(26 observations total), containing the Average Game Time (in hours) for that season.
+Intuitively, we should expect this variable to have a significant decrease for the
+2023 season, due to the introduction of the pitch clock making the games go faster.
+Ideally, we would have used datasets containing the game times for \underline{each}
+game in both seasons, however this was not publicly available.
+
+The main data used though was collected using the Custom Leaderboard feature
+on Baseball Savant, where each variable above was added to the dataset, with each
+row representing a single player's overall statistics. The data was then filtered
+to only include the 2023 season, and only include players with a minimum 100 Plate Appearances (PA)
+that season to limit outliers (100 min. PA is a popular threshold used for 
+baseball player analysis). This gives us 461 observations for the 2023 season,
+again with each row being a unique batter. The same steps were then applied to
+create a comparison dataset now filtering for the 2022 season, which has 469
+observations total. This gives us a baseline to compare the variables in the
+season where the rule changes were in effect (2023), to the previous season where
+they were not (2022).
+
+Different data formats were considered, such as using team-wide statistics
+for each season instead of player-wide, where the dataset would be 30 rows (one
+for each team). Using a combination of previous seasons data for comparison (not
+just 2022) was considered also, but we settled on the data we used as it seemed
+the most straightforward for our analysis and limited potential confounding
+factors. Data from complete game logs for each game of the 2023 season would have
+been an option, however this data is not yet publicly available. More on these topics
+are discussed in Section's~\ref{sec:meth} and \ref{sec:disc}.
+
 
 \section{Methods}
 \label{sec:meth}
