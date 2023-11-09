@@ -189,11 +189,13 @@ the limit of the defensive shift, as this rule change may increase the likelihoo
 of a hit. In a similar vein, Strike Outs and Walks (BB) may see an impact as both
 pitchers and batters adjust to the pitch clock. Other variables included in the
 study:
+
 \begin{itemize}
   \item Ground Into Double Play (GIDP)
   \item Hits on Ground Balls (Hit-GB)
   \item Expected Batting Average (xBA)
 \end{itemize}
+
 We expect these variables will be affected by the limit of the defensive shift.
 Also, pace of play (game time) data was collected from \href{https://www.baseball-reference.com/}{Baseball Reference}.
 Each row of this dataset represents a single season from 2023 dating back to 1998
@@ -213,7 +215,7 @@ again with each row being a unique batter. The same steps were then applied to
 create a comparison dataset now filtering for the 2022 season, which has 469
 observations total. This gives us a baseline to compare the variables in the
 season where the rule changes were in effect (2023), to the previous season where
-they were not (2022).
+they were not (2022). There are no missing or null values in each dataset.
 
 Different data formats were considered, such as using team-wide statistics
 for each season instead of player-wide, where the dataset would be 30 rows (one
@@ -221,8 +223,10 @@ for each team). Using a combination of previous seasons data for comparison (not
 just 2022) was considered also, but we settled on the data we used as it seemed
 the most straightforward for our analysis and limited potential confounding
 factors. Data from complete game logs for each game of the 2023 season would have
-been an option, however this data is not yet publicly available. More on these topics
-are discussed in Section's~\ref{sec:meth} and \ref{sec:disc}.
+been an option, however this data is not yet publicly available. More on this topic
+is discussed in Section~\ref{sec:disc}.
+
+
 
 
 \section{Methods}
