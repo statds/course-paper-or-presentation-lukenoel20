@@ -1,15 +1,17 @@
 \documentclass[12pt]{article}
 
-%% preamble: Keep it clean; only include those you need
+%% preamble:
 \usepackage{amsmath}
 \usepackage[margin = 1in]{geometry}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{natbib}
+\usepackage{setspace}
 
 % highlighting hyper links
 \usepackage[colorlinks=true, citecolor=blue]{hyperref}
 
+\doublespacing
 
 %% meta data
 
@@ -249,7 +251,12 @@ metric may be most affected by the rule changes, as stated previously. Both
 histograms exhibit fairly similar distributions; however, in 2023, there is a
 noticeable increase in the number of players with 20 or more stolen bases. This
 observation supports our intuition that the rule changes contributed to an uptick
-in this variable.
+in this variable. Side by side boxplots for 2022 versus 2023 were also created for
+each variable as shown in Figure~\ref{fig:Fig3}. The Stolen Bases statistic again
+sticks out, having a greater median and more high outliers in 2023. Expected Batting Average (XBA)
+and Slugging Percentage (SLG Percent) both look intriguing as well. As said above
+with Game Length, the statistical significance of the difference in these statistics
+from 2022 to 2023 will be tested in Section~\ref{sec:meth}.
 
 \begin{figure}[tbp]
   \centering
@@ -258,6 +265,15 @@ in this variable.
   histograms illustrate the distribution of stolen base counts for players in each
   season, with blue representing 2023 and orange representing 2022.}
   \label{fig:Fig2}
+\end{figure}
+
+\begin{figure}[tbp]
+  \centering
+  \includegraphics{boxplots}
+  \caption{Matrix of boxplots illustrating the evolution of baseball statistics
+  from 2022 to 2023, encompassing strikeout rates, walk rates, batting averages,
+  slugging percentages, BABIP, total stolen bases, GIDP, ground ball hits, and xBA.}
+  \label{fig:Fig3}
 \end{figure}
 
 
