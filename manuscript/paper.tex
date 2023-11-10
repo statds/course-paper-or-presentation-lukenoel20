@@ -11,6 +11,7 @@
 % highlighting hyper links
 \usepackage[colorlinks=true, citecolor=blue]{hyperref}
 
+\setlength{\tabcolsep}{10pt}
 \doublespacing
 
 %% meta data
@@ -336,8 +337,9 @@ All ten questions can be tested using a standard two-sample comparison with the 
 The \(z\)-test was considered as done in \citet{Price}, but we do not know the population standard deviation
 in this case. The \(t\)-test assumes the data is normally distributed so to account
 for this, we also conducted the nonparametric, distribution free, Mann Whitney U
-Test (also known as the Wilcoxon Rank Sum Test) to be sure of our results. Also,
-notice how some of these research questions call for a one-sided hypothesis test,
+Test (also known as the Wilcoxon Rank Sum Test) to be sure of our results. 
+
+Also, notice how some of these research questions call for a one-sided hypothesis test,
 like the number of hits on ground balls, because we intuitively expect this number
 to be greater in 2023 than in 2022 due to the limit of the defensive shift. Other
 metrics that we were not sure about whether they would increase or decrease were
@@ -351,7 +353,30 @@ and straightforward.
 \section{Results}
 \label{sec:resu}
 
-Summarize the results.
+Insert description about Table~\ref{tab:table1} here.
+
+\begin{table}[tbp]
+  \caption{The results from the 9 tests}
+  \label{tab:table1}
+  \centering
+  \begin{tabular}[t]{lccccc}
+    \toprule
+    & 2023 & 2022 & \multicolumn{2}{c}{P-value}\\
+    \cmidrule(lr){4-5}
+    &          &                & \(t\)-test & Wilcoxon's\\
+    \midrule
+    Stolen Bases & 7.226 & 4.994 & 0.0000 & 0.0011 \\ 
+    Strikeouts & 85.445 & 81.731 & 0.1596 & 0.0000 \\ 
+    Walks & 32.876 & 30.279 & 0.0599 & 0.0791 \\ 
+    Batting Avg & 0.243 & 0.237 & 0.0274 & 0.0154 \\ 
+    Slugging \% & 0.401 & 0.384 & 0.0008 & 0.0007 \\ 
+    BABIP & 0.293 & 0.288 & 0.0793 & 0.0695 \\ 
+    xBA & 0.241 & 0.235 & 0.0006 & 0.0005 \\ 
+    Hits on GB & 27.345 & 26.399 & 0.3757 & 0.3212 \\ 
+    GIDP & 7.232 & 6.925 & 0.3523 & 0.5401 \\ 
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 
 \section{Discussion}
