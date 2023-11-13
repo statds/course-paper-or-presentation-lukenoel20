@@ -80,4 +80,22 @@ print(table_object, include.rownames = TRUE)
 
 # NOW STARTING TABLE 2 (GAME LENGTH TABLE)
 
+# Convert AvgTime to numeric format (minutes)
+g_times$AvgTime_numeric <- as.numeric(sub(":.*", "", g_times$AvgTime)) + as.numeric(sub(".*:", "", g_times$AvgTime))/60
 
+# Dropping 2023 row from game length
+g_times <- g_times[-1, , drop = FALSE]
+
+# Perform  t-test and Wilcoxon on game length greater than 2023's which was 2.65 hours
+time_t <- t.test(g_times$AvgTime_numeric, mu = 2.65, alternative = "greater")
+time_w <- wilcox.test(g_times$AvgTime_numeric, mu = 2.65, alternative = "greater")
+
+# Data needed for latex table (will be inputted manually in tex file (easier))
+time2023 <- 2.65
+time2022_1998 <- mean(g_times$AvgTime_numeric)
+tpval_times <- time_t$p.value
+wpval_times <- time_w$p.value
+
+print(time2022_1998)
+print(tpval_times)
+print(wpval_times)
