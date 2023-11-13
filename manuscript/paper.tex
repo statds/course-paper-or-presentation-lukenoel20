@@ -353,10 +353,51 @@ and straightforward.
 \section{Results}
 \label{sec:resu}
 
-Insert description about Table~\ref{tab:table1} here.
+Table~\ref{tab:table1} summarizes the p-values for both the \(t\)-tests and Wilcoxon's
+tests for the research questions / hypotheses detailed in Section~\ref{sec:meth}.
+The difference in game length test was excluded from this table as this tested
+2023 versus 1998-2022 rather than just 2022, due to the data restrictions. Also,
+point estimates for each test were provided, one for the 2023 group and one for the
+2022 group.
+
+At the top of the table we see that the mean number of stolen bases for each player
+in 2023 is 7.226, and 4.994 in 2022 (these are the ``point estimates'') for the tests.
+This difference is statistically significant for both the \(t\)-test and Wilcoxon's test
+at $\alpha$ = 0.05, the significance level used for all of the tests in the table,
+as the p-values are 0.0000 (extremely small, rounded for presentation purposes) and
+0.0011 respectively. Adjusting the p-values to account for multiple tests using the
+Bonferroni correction also shows significance for both of these tests for stolen bases.
+This gives us ample evidence to conclude that the mean number of stolen bases in 2023
+significantly increased from 2022.
+
+On the other hand, the number of strikeouts did not seem to significantly change,
+as its \(t\)-test p-value is 0.1596. The Wilcoxon's test p-value is extremely small
+however, so the two tests are conflicting in their conclusions. Once we look at the
+95\% confidence interval (CI) of \((-1.46, 8.89)\) though, we see that it contains zero,
+meaning we cannot say the difference in the number of strikeouts year to year is significant.
+Moving down the table, other hypotheses that were not significant were Walks, BABIP,
+Hits on Ground Balls, and Ground into Double Play (GIDP) for both tests at the
+5\% significance level. Hits on Ground Balls was particularly surprising, as
+we expected that with no defensive shift anymore, more ground balls would become
+base hits.
+
+The difference in Batting Average, Slugging Percentage, and Expected Batting Average (xBA)
+from 2022 to 2023 were all statistically significant for both the \(t\)-test and
+Wilcoxon's Rank Sum test as their p-values were all less than $\alpha$ = 0.05. However,
+using the Bonferroni correction, the adjusted p-values for the Batting Average
+tests no longer were significant. So now there is only enough evidence to support
+that the difference from 2022 to 2023 in Slugging Percentage and xBA is significant.
+
+Also, for the game time data not shown in Table~\ref{tab:table1}, the average game
+length from 1998 to 2022 was 2.92 hours (2 hrs 55 mins), compared to only 2.65 hours
+(2 hrs 39 mins) in 2023. The \(t\)-test and Wilcoxon's test for the difference in
+these values yielded two extremely small p-values, so we have enough evidence to 
+conclude that the average game length is significantly shorter in 2023 compared to
+that in the previous 25 years. This was expected, as we assumed the pitch clock would
+speed up the game considerably.
 
 \begin{table}[tbp]
-  \caption{The results from the 9 tests}
+  \caption{The results from the 9 baseball statistics tests}
   \label{tab:table1}
   \centering
   \begin{tabular}[t]{lccccc}
